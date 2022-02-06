@@ -28,8 +28,8 @@ namespace LocalFunctions
 
             // playing with delegates
             {
-                var inc = program.GetInc(1);
-                var dec = program.GetInc(-1);
+                var inc = program.GetIncrementor(1);
+                var dec = program.GetIncrementor(-1);
                 var up = inc(10);
                 var down = dec(10);
                 Log.Information("up() should be 11 and is {Up}", up);
@@ -94,21 +94,16 @@ namespace LocalFunctions
 
         }
 
-        private Func<int, int> GetInc(int step)
-        {
-            var _step = step;
-            Func<int, int> delegatedFunc = delegate (int x)
-            {
-                return x++;
-            };
+        private Func<int, int> GetIncrementor(int step)
+            => x => x + step;
+        // {
+        //     return x => x + step;
 
-            Func<int, int> lambdaFunc = x => x + _step;
+        //     // var _step = step;
+        //     // Func<int, int> lambdaFunc = x => x + _step;
+        //     // return lambdaFunc;
 
-
-            return lambdaFunc;
-
-
-        }
+        // }
 
         /*
             Log.Verbose("A Verbose message");

@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Floatingman.Closures
 {
-    public class ClosureTester
+    public class Tests_For_Evolving_Pattern
     {
         [Fact]
         public void Static_Factory_Tests_SHortForm()

@@ -7,7 +7,7 @@ namespace Floatingman.Closures
     // this means that all the static methods in this class are available without class name decoration in this namespace
     using static Floatingman.Closures.Incrementor;
 
-    public class ClosureTester_Final
+    public class Tests_For_Final_State
     {
 
         [Fact]

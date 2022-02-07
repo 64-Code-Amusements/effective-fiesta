@@ -2,17 +2,14 @@
 
 namespace Floatingman.Closures
 {
-    public class Incrementor
+    public static class Incrementor
     {
-        private int _step;
 
-        public static Incrementor GetIncrementor(int step)
-            => new Incrementor(step);
+        public static Func<double, double> GetIncrementor(double step)
+            => x => x + step;
 
-        private Incrementor(int step)
-            => _step = step;
+        public static Func<int, int> GetIncrementor(int step)
+            => x => x + step;
 
-        public int Step(int value)
-            => value + _step;
     }
 }

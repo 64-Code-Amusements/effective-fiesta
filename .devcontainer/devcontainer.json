@@ -49,15 +49,15 @@
 		"seatonjiang.gitmoji-vscode",
 		"slevesque.vscode-hexdump",
 		"streetsidesoftware.code-spell-checker",
-		"wghats.vscode-nxunit-test-adapter",
 		"yzhang.markdown-all-in-one",
 		"shd101wyy.markdown-preview-enhanced",
 		// dotnet
 		"cschlosser.doxdocgen",
 		"derivitec-ltd.vscode-dotnet-adapter",
-		// "formulahendry.dotnet-test-explorer", // maybe not at this time
+		"formulahendry.dotnet-test-explorer",
 		"ms-dotnettools.csharp",
-		"ryanluker.vscode-coverage-gutters"
+		"ryanluker.vscode-coverage-gutters",
+		"wghats.vscode-nxunit-test-adapter",
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [5000, 5001],
@@ -88,8 +88,7 @@
 	// 	"source=${localEnv:HOME}/.gnupg,target=/home/vscode/.gnupg,type=bind,consistency=cached",
 	// ],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sh ./.devcontainer/custom-scripts/git/configure-git.sh",
-	// "postCreateCommand": "dotnet restore",
+	"postCreateCommand": "bash ./.devcontainer/custom-scripts/git/configure-git.sh && dotnet restore",
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
 }
